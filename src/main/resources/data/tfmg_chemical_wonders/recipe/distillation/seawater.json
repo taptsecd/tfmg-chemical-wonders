@@ -1,0 +1,21 @@
+{
+  "type": "tfmg:distillation",
+  "ingredients": [
+    {
+      "type": "neoforge:single",
+      "fluid": "tfmg_chemical_wonders:seawater",
+      "amount": 1000
+    }
+  ],
+  "processing_time": 300,
+  "results": [
+    {
+      "id": "tfmg_chemical_wonders:brine",
+      "amount": 250
+    },
+    {
+      "id": "minecraft:water",
+      "amount": 750
+    }
+  ]
+}

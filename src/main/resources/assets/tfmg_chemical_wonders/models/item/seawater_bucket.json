@@ -1,0 +1,5 @@
+{
+  "parent": "neoforge:item/bucket",
+  "fluid": "tfmg_chemical_wonders:seawater",
+  "loader": "neoforge:fluid_container"
+}

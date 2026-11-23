@@ -1,0 +1,25 @@
+{
+  "type": "tfmg:vat",
+  "ingredients": [
+    {
+      "item": "tfmg_chemical_wonders:sodium_hydroxide"
+    },
+    {
+      "type": "neoforge:single",
+      "fluid": "minecraft:water",
+      "amount": 250
+    }
+  ],
+  "results": [
+    {
+      "id": "tfmg_chemical_wonders:sodium_hydroxide_solution",
+      "amount": 250
+    }
+  ],
+  "machines": [
+    "tfmg:mixer"
+  ],
+  "min_size": 1,
+  "heat_level": 0,
+  "processing_time": 50
+}

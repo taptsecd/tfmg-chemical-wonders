@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "#tfmg_chemical_wonders:salt_coasts",
+    "minecraft:desert",
+    "minecraft:badlands",
+    "minecraft:wooded_badlands",
+    "minecraft:eroded_badlands"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "#tfmg_chemical_wonders:salt_coasts",
+    "#minecraft:is_ocean",
+    {
+      "id": "#c:is_ocean",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:ocean",
+      "required": false
+    }
+  ]
+}

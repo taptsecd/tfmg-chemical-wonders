@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#tfmg_chemical_wonders:has_rock_salt",
+  "features": "tfmg_chemical_wonders:rock_salt_deposit",
+  "step": "underground_ores"
+}

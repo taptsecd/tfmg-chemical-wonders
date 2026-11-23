@@ -1,0 +1,18 @@
+{
+  "item.tfmg_chemical_wonders.sodium_chloride": "Sodium Chloride",
+  "tooltip.tfmg_chemical_wonders.sodium_chloride": "NaCl \u00b7 Salt",
+  "itemGroup.tfmg_chemical_wonders.chemistry": "TFMG: Chemical Wonders",
+  "block.tfmg_chemical_wonders.rock_salt": "Rock Salt",
+  "block.tfmg_chemical_wonders.seawater": "Seawater",
+  "block.tfmg_chemical_wonders.brine": "Brine",
+  "fluid_type.tfmg_chemical_wonders.seawater": "Seawater",
+  "fluid_type.tfmg_chemical_wonders.brine": "Brine",
+  "item.tfmg_chemical_wonders.seawater_bucket": "Seawater Bucket",
+  "item.tfmg_chemical_wonders.brine_bucket": "Brine Bucket",
+  "item.tfmg_chemical_wonders.sodium_hydroxide": "Sodium Hydroxide",
+  "tooltip.tfmg_chemical_wonders.sodium_hydroxide": "NaOH \u00b7 Caustic Soda",
+  "block.tfmg_chemical_wonders.sodium_hydroxide_solution": "Sodium Hydroxide Solution",
+  "fluid_type.tfmg_chemical_wonders.sodium_hydroxide_solution": "Sodium Hydroxide Solution",
+  "item.tfmg_chemical_wonders.sodium_hydroxide_solution_bucket": "Sodium Hydroxide Solution Bucket",
+  "fluid_type.tfmg_chemical_wonders.chlorine": "Chlorine"
+}

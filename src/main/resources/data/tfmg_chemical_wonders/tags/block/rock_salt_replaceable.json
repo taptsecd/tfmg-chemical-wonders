@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "#minecraft:sand",
+    "minecraft:sandstone",
+    "minecraft:red_sandstone",
+    "minecraft:stone",
+    "minecraft:gravel",
+    "minecraft:basalt",
+    {
+      "id": "biomeswevegone:white_dacite",
+      "required": false
+    },
+    {
+      "id": "biomeswevegone:white_dacite_cobblestone",
+      "required": false
+    }
+  ]
+}

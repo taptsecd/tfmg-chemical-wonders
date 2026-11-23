@@ -1,0 +1,5 @@
+{
+  "parent": "neoforge:item/bucket",
+  "loader": "neoforge:fluid_container",
+  "fluid": "tfmg_chemical_wonders:sodium_hydroxide_solution"
+}

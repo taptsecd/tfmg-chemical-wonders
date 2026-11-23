@@ -1,0 +1,85 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev' version '2.0.148'
+}
+
+version = mod_version
+group = mod_group_id
+base { archivesName = mod_id }
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+neoForge {
+    version = project.neo_version
+    runs {
+        gameTestServer {
+            type = 'gameTestServer'
+            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+        }
+        client { client() }
+        server {
+            server()
+            programArgument '--nogui'
+        }
+        data {
+            data()
+            programArguments.addAll '--mod', project.mod_id, '--all',
+                '--output', file('src/generated/resources').absolutePath,
+                '--existing', file('src/main/resources').absolutePath
+        }
+    }
+    mods {
+        "${mod_id}" { sourceSet sourceSets.main }
+    }
+}
+
+sourceSets.main.resources.srcDir 'src/generated/resources'
+
+def generateModMetadata = tasks.register('generateModMetadata', ProcessResources) {
+    def properties = [mod_id: mod_id, mod_name: mod_name, mod_version: mod_version,
+                      mod_license: mod_license, minecraft_version: minecraft_version,
+                      neo_version: neo_version]
+    inputs.properties properties
+    expand properties
+    from 'src/main/templates'
+    into layout.buildDirectory.dir('generated/modMetadata')
+}
+sourceSets.main.resources.srcDir generateModMetadata
+neoForge.ideSyncTask generateModMetadata
+
+tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }
+tasks.named('wrapper', Wrapper) {
+    gradleVersion = '8.14.4'
+    distributionType = Wrapper.DistributionType.BIN
+}
+
+// Keep chemistry model checks dependency-free while making them part of normal builds.
+def chemistryCheck = tasks.register('chemistryCheck', JavaExec) {
+    dependsOn tasks.named('testClasses')
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'dev.taptsecd.chemicalwonders.chemistry.ChemistryChecks'
+}
+tasks.named('check') { dependsOn chemistryCheck }
+
+repositories {
+    maven {
+        name = 'Modrinth'
+        url = 'https://api.modrinth.com/maven'
+        content { includeGroup 'maven.modrinth' }
+    }
+}
+
+dependencies {
+    implementation "maven.modrinth:hC1xYvnS:${tfmg_ce_version}"
+    implementation "maven.modrinth:LNytGWDc:${create_version}"
+}
+
+// Optional integration-test profile; BWG is not required by the shipped mod.
+if (providers.gradleProperty('bwgCompat').map { it.toBoolean() }.getOrElse(false)) {
+    dependencies {
+        runtimeOnly "maven.modrinth:NTi7d3Xc:gAxM0bHs" // bwg 2.6.3-NeoForge
+        runtimeOnly "maven.modrinth:ziOp6EO8:Za7PInLk" // corgilib 1.21.1-5.0.0.10-NeoForge
+        runtimeOnly "maven.modrinth:g8NOG5OR:7zqZzoiq" // oh-the-trees-youll-grow 1.21.1-5.3.6-NeoForge
+        runtimeOnly "maven.modrinth:8BmcQJ2H:nxAPSFAR" // geckolib 4.9.4
+        runtimeOnly "maven.modrinth:kkmrDlKT:6e8GCrLb" // terrablender 4.1.0.8
+    }
+}

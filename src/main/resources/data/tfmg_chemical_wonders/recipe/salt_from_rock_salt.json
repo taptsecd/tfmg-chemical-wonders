@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "tfmg_chemical_wonders:rock_salt"
+    }
+  ],
+  "result": {
+    "id": "tfmg_chemical_wonders:sodium_chloride",
+    "count": 2
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "tfmg_chemical_wonders:rock_salt"
+    }
+  ],
+  "processing_time": 150,
+  "results": [
+    {
+      "id": "tfmg_chemical_wonders:sodium_chloride",
+      "count": 4
+    }
+  ]
+}
